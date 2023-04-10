@@ -1,40 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsel.c                                           :+:      :+:    :+:   */
+/*   frees.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/05 16:33:31 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/10 12:28:48 by marirodr         ###   ########.fr       */
+/*   Created: 2023/04/10 11:14:50 by marirodr          #+#    #+#             */
+/*   Updated: 2023/04/10 12:06:13 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*function to print the numbers, only to check is they're correctly taken*/
-
-void	ft_print_pointer_x2(char **argv)
+void	ft_free_pointer_x2(char **argv)
 {
 	int	i;
 
 	i = 0;
-	while (argv[i] != NULL)
+	if (argv == NULL)
+		return ;
+	while (argv[i])
 	{
-		ft_printf("%s\n", argv[i]);
+		free(argv[i]);
 		i++;
 	}
-}
-
-/*function to separate arguments in string if the consoled passed arguments it's
-a single string with "", like "1 5 2"*/
-
-char	**ft_parse(char **argv)
-{
-	char	**str;
-
-	str = ft_split(argv[1], ' ');
-	if (!*str)
-		exit(0);
-	return (str);
+	free(argv);
 }

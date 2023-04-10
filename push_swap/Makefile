@@ -6,7 +6,7 @@
 #    By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/22 13:21:44 by marirodr          #+#    #+#              #
-#    Updated: 2023/04/05 17:38:53 by marirodr         ###   ########.fr        #
+#    Updated: 2023/04/10 13:41:02 by marirodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,16 +18,21 @@ CFLAGS 		= 	-Wall -Werror -Wextra
 
 LIBFT		= 	libft/libft.a
 
-SRC			= 	check_arg.c utils.c main.c parsel.c \
+SRC			= 	check_arg.c utils.c main.c parsel.c frees.c \
+						fill_n_indexing.c utils_stacks.c \
 
 OBJT		= 	$(SRC:.c=.o)
+
+GREEN		=		\033[0;32m
+RED			=		\033[0;31m
+END			=		\033[0m
 
 all:			$(NAME)
 
 $(NAME):	 $(OBJT)
 					make -s -C libft
 					$(CC) $(CFLAGS) $(OBJT) $(LIBFT) -o $(NAME)
-					@echo "Ready"
+					@echo "$(GREEN)Ready"
 #$(LIBFT):
 #				make -s -C libft
 
@@ -36,12 +41,12 @@ $(NAME):	 $(OBJT)
 
 clean:
 				rm -f $(OBJT)
-				@echo "Compiled objects have been removed"
+				@echo "$(RED)Compiled objects have been removed"
 
 fclean:			clean
 				rm -f $(NAME)
 				make fclean -s -C libft
-				@echo "Executables have been removed"
+				@echo "$(RED)Executables have been removed"
 
 re:				fclean all
 

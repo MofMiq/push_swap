@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 12:35:42 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/05 18:08:31 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/10 12:25:56 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,22 @@ int	is_number(char *argv)
 cmp_number = 0 ->los argumentos son iguales
 cmp_number = 1 ->los argumentos son distintos
 return: 1 si existe duplica; 0 si no hay ninguno
+int flag: boolean to know if the arguments had been parsed or not,
+because where to begin to check the arguments depends on that
+0 for when we use split; 1 for when not so we pass the program name
 */
 
-int	ndup(char **argv)
+int	ft_ndup(char **argv, int flag)
 {
 	int	i;
 	int	j;
 	int	z;
 
-	i = 1;
+	i = flag;
 	z = 0;
 	while (argv[i])
 	{
-		j = 1;
+		j = i;
 		if (ft_atol(argv[i]) == 0)
 			z++;
 		while (argv[j])
@@ -59,14 +62,17 @@ int	ndup(char **argv)
 	return (0);
 }
 
-/*check if the arguments are correctly "written"*/
+/*check if the arguments are correctly "written"
+int flag: boolean to know if the arguments had been parsed or not,
+because where to begin to check the arguments depends on that
+0 for when we use split; 1 for when not so we pass the program name*/
 
-int	ft_arg_check(char **argv)
+int	ft_arg_check(char **argv, int flag)
 {
 	int			i;
 	long int	nb;
 
-	i = 1;
+	i = flag;
 	while (argv[i])
 	{
 		if (ft_strcmp("", argv[i]) == 0)
@@ -78,7 +84,7 @@ int	ft_arg_check(char **argv)
 			return (0);
 		i++;
 	}
-	if (ndup(argv))
+	if (ft_ndup(argv, flag))
 		return (0);
 	return (1);
 }
