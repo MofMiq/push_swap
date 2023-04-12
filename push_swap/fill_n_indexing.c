@@ -6,11 +6,13 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 12:19:01 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/11 11:03:32 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/12 10:26:14 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+/*fill stacks a with the arguments changed previously to numbers.*/
 
 t_stack	*ft_fill_stack(char **argv)
 {
@@ -54,7 +56,7 @@ void	ft_index_stack(t_stack *stack_a, int stack_size)
 				largest = aux;
 				aux = stack_a;
 			}
-			aux = aux->next; //esta linea me raya por el else de los demas
+			aux = aux->next;
 		}
 		if (largest != NULL)
 			largest->index = stack_size;

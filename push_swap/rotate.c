@@ -6,11 +6,14 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 16:56:18 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/11 17:20:11 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/12 10:29:36 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+/*the first node of the list becomes the last one, because shifts all elements
+of it gp up by 1 */
 
 void	ft_rotate(t_stack	**stack)
 {
@@ -18,10 +21,10 @@ void	ft_rotate(t_stack	**stack)
 	t_stack	*last;
 
 	tmp = *stack;
-	*stack = *stack->next;
+	*stack = (*stack)->next;
 	last = ft_get_last_node(*stack);
 	tmp->next = NULL;
-	last->next = last;
+	last->next = tmp;
 }
 
 void	ft_ra(t_stack **stack_a)

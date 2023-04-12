@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 13:39:17 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/11 11:01:43 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/12 12:25:10 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,19 @@ t_stack	*ft_new_stack(int value)
 
 t_stack	*ft_get_last_node(t_stack *stack)
 {
-	while (stack->next != NULL)
+	while (stack && stack->next != NULL)
 		stack = stack->next;
 	return (stack);
 }
+
+t_stack	*ft_get_penultimate_node(t_stack *stack)
+{
+	while (stack->next->next != NULL) //stack && stack->next && 
+		stack = stack->next;
+	return (stack);
+}
+
+/*returns the size of the list, (without the NULL, because isn't a node)*/
 
 int	ft_stack_size(t_stack *stack)
 {
@@ -73,13 +82,4 @@ t_stack	*ft_stack_add_last(t_stack **stack, t_stack *new)
 	else
 		ft_get_last_node(*stack)->next = new;
 	return (*stack);
-}
-
-void	ft_print_list(t_stack *stack_a)
-{
-	while (stack_a)
-	{
-		ft_printf("v:%d i:%d\n", stack_a->value, stack_a->index);
-		stack_a = stack_a->next;
-	}
 }
