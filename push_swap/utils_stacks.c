@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 13:39:17 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/10 16:46:21 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/11 11:01:43 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,19 @@ in push_swap and add a 'new' node at the end of the stack.
 t_stack	*ft_stack_add_last(t_stack **stack, t_stack *new)
 {
 	if (!new)
-		return ;
+		return (NULL);
 	if (*stack == NULL)
 		*stack = new;
 	else
 		ft_get_last_node(*stack)->next = new;
-	return (stack);
+	return (*stack);
+}
+
+void	ft_print_list(t_stack *stack_a)
+{
+	while (stack_a)
+	{
+		ft_printf("v:%d i:%d\n", stack_a->value, stack_a->index);
+		stack_a = stack_a->next;
+	}
 }

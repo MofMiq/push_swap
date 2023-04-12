@@ -6,7 +6,7 @@
 #    By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/22 13:21:44 by marirodr          #+#    #+#              #
-#    Updated: 2023/04/10 13:41:02 by marirodr         ###   ########.fr        #
+#    Updated: 2023/04/11 17:13:27 by marirodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CFLAGS 		= 	-Wall -Werror -Wextra
 LIBFT		= 	libft/libft.a
 
 SRC			= 	check_arg.c utils.c main.c parsel.c frees.c \
-						fill_n_indexing.c utils_stacks.c \
+				fill_n_indexing.c utils_stacks.c swap.c rotate.c \
 
 OBJT		= 	$(SRC:.c=.o)
 

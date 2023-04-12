@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 12:35:42 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/10 12:25:56 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/11 11:08:36 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ because where to begin to check the arguments depends on that
 0 for when we use split; 1 for when not so we pass the program name
 */
 
-int	ft_ndup(char **argv, int flag)
+int	ft_ndup(char **argv)
 {
 	int	i;
 	int	j;
 	int	z;
 
-	i = flag;
+	i = 0;
 	z = 0;
 	while (argv[i])
 	{
@@ -67,12 +67,12 @@ int flag: boolean to know if the arguments had been parsed or not,
 because where to begin to check the arguments depends on that
 0 for when we use split; 1 for when not so we pass the program name*/
 
-int	ft_arg_check(char **argv, int flag)
+int	ft_arg_check(char **argv)
 {
 	int			i;
 	long int	nb;
 
-	i = flag;
+	i = 0;
 	while (argv[i])
 	{
 		if (ft_strcmp("", argv[i]) == 0)
@@ -84,7 +84,7 @@ int	ft_arg_check(char **argv, int flag)
 			return (0);
 		i++;
 	}
-	if (ft_ndup(argv, flag))
+	if (ft_ndup(argv))
 		return (0);
 	return (1);
 }

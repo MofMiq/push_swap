@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 12:19:01 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/10 17:33:48 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/11 11:03:32 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_stack	*ft_fill_stack(char **argv)
 	while (argv[i])
 	{
 		nb = ft_atoi(argv[i]);
-		ft_stack_add_last(stack_a, ft_new_stack(nb));
+		ft_stack_add_last(&stack_a, ft_new_stack(nb));
 		i++;
 	}
 	return (stack_a);

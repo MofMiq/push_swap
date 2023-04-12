@@ -1,41 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   frees.c                                            :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/10 11:14:50 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/11 12:00:23 by marirodr         ###   ########.fr       */
+/*   Created: 2023/04/11 16:56:18 by marirodr          #+#    #+#             */
+/*   Updated: 2023/04/11 17:20:11 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_free_pointer_x2(char **argv)
-{
-	int	i;
-
-	i = 0;
-	if (argv == NULL)
-		return ;
-	while (argv[i])
-	{
-		free(argv[i]);
-		i++;
-	}
-	free(argv);
-}
-
-void	ft_free_stack(t_stack **stack)
+void	ft_rotate(t_stack	**stack)
 {
 	t_stack	*tmp;
+	t_stack	*last;
 
 	tmp = *stack;
-	while (*stack)
-	{
-		*stack = (*stack)->next;
-		free(tmp);
-		tmp = *stack;
-	}
+	*stack = *stack->next;
+	last = ft_get_last_node(*stack);
+	tmp->next = NULL;
+	last->next = last;
+}
+
+void	ft_ra(t_stack **stack_a)
+{
+	ft_rotate(stack_a);
+	ft_printf("ra\n");
+}
+
+void	ft_rb(t_stack **stack_b)
+{
+	ft_rotate(stack_b);
+	ft_printf("rb\n");
+}
+
+void	ft_rr(t_stack **stack_a, t_stack **stack_b)
+{
+	ft_ra(stack_a);
+	ft_rb(stack_b);
+	ft_printf("rr\n");
 }
