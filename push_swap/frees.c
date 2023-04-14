@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 11:14:50 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/11 12:00:23 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/14 12:57:52 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,13 @@ void	ft_free_stack(t_stack **stack)
 {
 	t_stack	*tmp;
 
-	tmp = *stack;
+	if (!stack || !(*stack))
+		return ;
 	while (*stack)
 	{
-		*stack = (*stack)->next;
-		free(tmp);
-		tmp = *stack;
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
 	}
+	*stack = NULL;
 }

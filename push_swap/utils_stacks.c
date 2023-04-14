@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 13:39:17 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/12 12:25:10 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/14 12:57:44 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ t_stack	*ft_new_stack(int value)
 	return (stack);
 }
 
-/*return the last element of the stack*/
+/*return the last element of the stack
+while (stack->next->next != NULL) //stack && stack->next && */
 
 t_stack	*ft_get_last_node(t_stack *stack)
 {
@@ -44,7 +45,7 @@ t_stack	*ft_get_last_node(t_stack *stack)
 
 t_stack	*ft_get_penultimate_node(t_stack *stack)
 {
-	while (stack->next->next != NULL) //stack && stack->next && 
+	while (stack->next->next != NULL)
 		stack = stack->next;
 	return (stack);
 }

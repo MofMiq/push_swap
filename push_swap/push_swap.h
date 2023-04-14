@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:58:48 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/11 17:13:24 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/14 12:57:56 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int		ft_ndup(char **argv);
 int		ft_arg_check(char **argv);
 
 //main
+void	ft_print_list(t_stack *stack_a);
 
 //parse
 char	**ft_parse(char **argv);
@@ -62,7 +63,13 @@ t_stack	*ft_new_stack(int value);
 t_stack	*ft_get_last_node(t_stack *stack);
 t_stack	*ft_stack_add_last(t_stack **stack, t_stack *new);
 int		ft_stack_size(t_stack *stack);
-void	ft_print_list(t_stack *stack_a);
+t_stack	*ft_get_penultimate_node(t_stack *stack);
+
+//sort
+int		ft_is_sorted(t_stack	*stack);
+int		ft_highest_index(t_stack	*stack);
+void	ft_sort(t_stack	**stack_a, int stack_size);
+void	ft_sort_3(t_stack	**stack_a);
 
 //swap
 void	ft_swap_ps(t_stack *stack);
@@ -75,5 +82,16 @@ void	ft_rotate(t_stack	**stack);
 void	ft_ra(t_stack **stack_a);
 void	ft_rb(t_stack **stack_b);
 void	ft_rr(t_stack **stack_a, t_stack **stack_b);
+
+//reverse_rotate
+void	ft_reverse_rotate(t_stack **stack);
+void	ft_rra(t_stack **stack_a);
+void	ft_rrb(t_stack **stack_b);
+void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
+
+//push
+void	ft_push(t_stack **src, t_stack **dst);
+void	ft_pa(t_stack	**stack_a, t_stack **stack_b);
+void	ft_pb(t_stack	**stack_a, t_stack **stack_b);
 
 #endif

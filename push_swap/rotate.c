@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 16:56:18 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/12 10:29:36 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/14 12:57:47 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_rotate(t_stack	**stack)
 
 	tmp = *stack;
 	*stack = (*stack)->next;
-	last = ft_get_last_node(*stack);
+	last = ft_get_last_node(tmp);
 	tmp->next = NULL;
 	last->next = tmp;
 }

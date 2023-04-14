@@ -6,11 +6,14 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 13:58:53 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/11 16:38:33 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/14 12:57:45 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+//ft_swap(stack->index);
+//ft_swap(stack->value);
 
 void	ft_swap_ps(t_stack *stack)
 {
@@ -21,11 +24,9 @@ void	ft_swap_ps(t_stack *stack)
 	tmp = stack->index;
 	stack->index = stack->next->index;
 	stack->next->index = tmp;
-	//ft_swap(stack->index);
 	tmp = stack->value;
 	stack->value = stack->next->value;
 	stack->next->value = tmp;
-	//ft_swap(stack->value);
 }
 
 void	ft_sa(t_stack *stack_a)
