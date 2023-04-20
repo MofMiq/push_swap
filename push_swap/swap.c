@@ -6,12 +6,13 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 13:58:53 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/14 12:57:45 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/14 13:26:13 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/*swap value and index of the two second nodes of the list*/
 //ft_swap(stack->index);
 //ft_swap(stack->value);
 

@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 12:19:01 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/14 12:57:53 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/20 11:20:56 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ t_stack	*ft_fill_stack(char **argv)
 /*asignamos de mayor a menor porque tenemos el indice mayor al tener el tamaño
 de laa lista. puntero auxiliar con el que recorrer el stack; puntero largest
 para ir guardando la valor mayor con cada vuelta; int v: para ir guardando el
-valor mas alto de cada vuelta.*/
+valor mas alto de cada vuelta. al indexar empezamos en 1, porque 0 significa
+que no ha sido indexado todavia.*/
 
 void	ft_index_stack(t_stack *stack_a, int stack_size)
 {

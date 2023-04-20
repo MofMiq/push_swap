@@ -6,13 +6,13 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 11:26:03 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/14 12:57:51 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/18 16:56:29 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*to search leaks in the program*/
+/*to search leaks in the program, not valid to send*/
 
 void	ft_leaks(void)
 {
@@ -33,7 +33,7 @@ void	ft_print_list(t_stack *stack_a)
 }
 
 /*in this function, if everything is correct we only call other functions in
-order.*/
+order to sort everything.*/
 
 void	ft_push_swap(char **argv)
 {
@@ -45,12 +45,8 @@ void	ft_push_swap(char **argv)
 	stack_b = NULL;
 	stack_size = ft_stack_size(stack_a);
 	ft_index_stack(stack_a, stack_size);
-	if (ft_is_sorted(stack_a))
-		ft_free_stack(&stack_a);
-	else
-	{
-		ft_sort(&stack_a, stack_size);
-	}
+	if (!ft_is_sorted(stack_a))
+		ft_decide(&stack_a, &stack_b, stack_size);
 	ft_free_stack(&stack_a);
 }
 

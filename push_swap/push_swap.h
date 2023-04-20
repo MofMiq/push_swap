@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:58:48 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/14 12:57:56 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/20 12:22:38 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,21 @@ t_stack	*ft_stack_add_last(t_stack **stack, t_stack *new);
 int		ft_stack_size(t_stack *stack);
 t_stack	*ft_get_penultimate_node(t_stack *stack);
 
-//sort
+//sort ->reorganizar
 int		ft_is_sorted(t_stack	*stack);
 int		ft_highest_index(t_stack	*stack);
-void	ft_sort(t_stack	**stack_a, int stack_size);
+void	ft_decide(t_stack	**stack_a, t_stack **stack_b, int stack_size);
 void	ft_sort_3(t_stack	**stack_a);
+void	ft_sort_plus(t_stack **stack_a, t_stack **stack_b);
+void	ft_push_until_3(t_stack **stack_a, t_stack **stack_b);
+
+//target
+void	ft_position(t_stack **stack);
+int		ft_find_out_tp(stack_t **stack_a, int i_b, int i_a, int tp);
+void	ft_write_target_position(t_stack **stack_a, t_stack **stack_b);
+
+//cost
+void	ft_calculate_cost(t_stack **stack_a, t_stack **stack_b);
 
 //swap
 void	ft_swap_ps(t_stack *stack);

@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 13:39:17 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/14 12:57:44 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/14 13:26:44 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ t_stack	*ft_get_last_node(t_stack *stack)
 		stack = stack->next;
 	return (stack);
 }
+
+/*return the penultimate of the stack*/
 
 t_stack	*ft_get_penultimate_node(t_stack *stack)
 {

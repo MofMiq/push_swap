@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 13:24:44 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/14 12:57:46 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/20 12:35:26 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,14 @@ int	ft_highest_index(t_stack	*stack)
 /* tiene que ser **stack para que guardemos la direccion de memoria del
 primer elemento de la lista y no perdamos la referencia.*/
 
-void	ft_sort(t_stack	**stack_a, int stack_size)
+void	ft_decide(t_stack	**stack_a, t_stack **stack_b, int stack_size)
 {
 	if (stack_size == 2)
 		ft_sa(*stack_a);
 	else if (stack_size == 3)
-	{
 		ft_sort_3(stack_a);
-	}
-	else
-		return ;
+	else if (stack_size > 3)
+		ft_sort_plus(stack_a, stack_b);
 }
 
 	// else if (size > 3)
@@ -85,4 +83,49 @@ void	ft_sort_3(t_stack	**stack_a)
 	}
 	else if ((*stack_a)->next->next->index == ft_highest_index(*stack_a))
 		ft_sa(*stack_a);
+}
+
+void	ft_sort_plus(t_stack **stack_a, t_stack **stack_b)
+{
+	ft_push_until_3(stack_a, stack_b);
+	ft_sort_3(stack_a);
+	while (stack_b) //?? *
+	{
+		ft_write_target_position(stack_a, stack_b);
+		ft_calculate_cost();
+	}
+}
+
+/*(stack_size / 2) > 3 : lo puedo hacer de otra menera???? probar
+pushes all nodes of stack_a into stack_b, except the last three.
+Also, make a previous ordenation pushing first the ones with
+smaller indices.
+p = it's a contador for the elements pushed into stack_b
+i = it's a contador to control the "len" of stack_a*/
+
+void	ft_push_until_3(t_stack **stack_a, t_stack **stack_b)
+{
+	int	stack_size;
+	int	i;
+	int	p;
+
+	stack_size = ft_stack_size(*stack_a);
+	i = 0;
+	p = 0;
+	while (i < stack_size && p < (stack_size / 2) && (stack_size / 2) > 3)
+	{
+		if ((*stack_a)->index <= stack_size)
+		{
+			ft_pb(stack_a, stack_b);
+			p++;
+		}
+		else
+			ft_ra(stack_a);
+		i++;
+	}
+	while ((stack_size - p) > 3)
+	{
+		ft_pb(stack_a, stack_b);
+		p++;
+	}
 }
