@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 11:26:03 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/18 16:56:29 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/24 19:13:44 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_print_list(t_stack *stack_a)
 {
 	while (stack_a)
 	{
-		ft_printf("v:%d i:%d\n", stack_a->value, stack_a->index);
+		ft_printf("v:%d\ti:%d\tpos:%d\ttp:%d\tcost_a:%d\tcost_b:%d\n", stack_a->value, stack_a->index, stack_a->pos, stack_a->target_pos, stack_a->cost_a, stack_a->cost_b);
 		stack_a = stack_a->next;
 	}
 	ft_printf("----\n");
@@ -47,7 +47,26 @@ void	ft_push_swap(char **argv)
 	ft_index_stack(stack_a, stack_size);
 	if (!ft_is_sorted(stack_a))
 		ft_decide(&stack_a, &stack_b, stack_size);
-	ft_free_stack(&stack_a);
+	if (ft_is_sorted(stack_a))
+	{
+		//printf("ordenao coño!!!");
+		//ft_print_list(stack_a);
+		ft_free_stack(&stack_a);
+		ft_free_stack(&stack_b);
+	}
+}
+
+/* tiene que ser **stack para que guardemos la direccion de memoria del
+primer elemento de la lista y no perdamos la referencia.*/
+
+void	ft_decide(t_stack	**stack_a, t_stack **stack_b, int stack_size)
+{
+	if (stack_size == 2)
+		ft_sa(*stack_a);
+	else if (stack_size == 3)
+		ft_sort_3(stack_a);
+	else if (stack_size > 3)
+		ft_sort_plus(stack_a, stack_b);
 }
 
 /*we check if there're enough arguments. if that's the case, we check if it's
@@ -59,6 +78,7 @@ to know what must be freed, only when we call ft_parse*/
 
 int	main(int argc, char **argv)
 {
+	//atexit(ft_leaks);
 	char	**splited;
 	int		flag;
 
@@ -76,11 +96,10 @@ int	main(int argc, char **argv)
 	if (!ft_arg_check(splited))
 	{
 		if (flag == 1)
-			ft_free_pointer_x2(splited);
-		ft_printf("%s¡¡¡¡error!!!!%s\n", RED, END);
+			ft_free_double_pointer(splited);
 		return (0);
 	}
 	ft_push_swap(splited);
 	if (flag == 1)
-		ft_free_pointer_x2(splited);
+		ft_free_double_pointer(splited);
 }

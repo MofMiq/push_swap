@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 13:09:07 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/20 13:12:56 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/24 16:02:09 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ en el caso de que estemos ante el numero mayor de todas las pilas y por
 tanto tenga que ir en la ultima posicion en a, le dejamos el valor max.
 */
 
-int	ft_find_out_tp(stack_t **stack_a, int i_b, int i_a, int tp)
+int	ft_find_out_tp(t_stack **stack_a, int i_b, int i_a, int tp)
 {
 	t_stack	*tmp;
 
@@ -59,8 +59,11 @@ int	ft_find_out_tp(stack_t **stack_a, int i_b, int i_a, int tp)
 		}
 		tmp = tmp->next;
 	}
-	if (tp != INT_MAX)
+	if (i_a != INT_MAX)
+	{
+		//ft_printf("tp: %d", tp);
 		return (tp);
+	}
 	tmp = *stack_a;
 	while (tmp)
 	{
@@ -84,13 +87,13 @@ void	ft_write_target_position(t_stack **stack_a, t_stack **stack_b)
 	t_stack	*tmp;
 	int		tp;
 
-	tmp = *stack_b;
-	tp = 0;
 	ft_position(stack_a);
 	ft_position(stack_b);
+	tmp = *stack_b;
+	tp = 0;
 	while (tmp)
 	{
-		tp = ft_find_out_tp(stack_a, tmp->index, INT_MAX, tp);
+		tp = ft_find_out_tp(stack_a, tmp->index, INT_MAX, 0);
 		tmp->target_pos = tp;
 		tmp = tmp->next;
 	}

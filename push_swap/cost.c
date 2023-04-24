@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 12:21:02 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/20 14:43:55 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/24 18:53:17 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,38 @@ void	ft_calculate_cost(t_stack **stack_a, t_stack **stack_b)
 		if (tmp_b->pos > (size_b / 2))
 			tmp_b->cost_b = (size_b - tmp_b->pos) * -1;
 		tmp_b->cost_a = tmp_b->target_pos;
-		if (tmp_b->target_pos > (size_b / 2))
+		if (tmp_b->target_pos > (size_a / 2))
 			tmp_b->cost_a = (size_a - tmp_b->target_pos) * -1;
 		tmp_b = tmp_b->next;
 	}
+//	ft_print_list(*stack_b);
+//	pause();
+}
+
+/*find the element in stack_b with the cheapest cost to move to stack_a
+and we call other function to make the correct moves in both stack to 
+positionate both in the right postion. If there're various costs with
+the same value, we take the firt one we find.*/
+
+void	ft_cheapest_cost(t_stack **stack_a, t_stack **stack_b)
+{
+	t_stack	*tmp;
+	int		cheapest;
+	int		cost_a;
+	int		cost_b;
+
+	tmp = *stack_b;
+	cheapest = INT_MAX;
+	while (tmp)
+	{
+		if (ft_abs(tmp->cost_a) + ft_abs(tmp->cost_b) < ft_abs(cheapest))
+		{
+			cheapest = ft_abs(tmp->cost_a) + ft_abs(tmp->cost_b);
+			cost_a = tmp->cost_a;
+			cost_b = tmp->cost_b;
+		}
+		tmp = tmp->next;
+	}
+	//ft_printf("cheapest: %d\n", cheapest);
+	ft_choose_move(stack_a, stack_b, cost_a, cost_b);
 }
