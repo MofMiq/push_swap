@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 11:26:03 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/24 19:13:44 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/25 13:46:59 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,8 @@ void	ft_push_swap(char **argv)
 	if (!ft_is_sorted(stack_a))
 		ft_decide(&stack_a, &stack_b, stack_size);
 	if (ft_is_sorted(stack_a))
-	{
-		//printf("ordenao coño!!!");
-		//ft_print_list(stack_a);
-		ft_free_stack(&stack_a);
-		ft_free_stack(&stack_b);
-	}
+	ft_free_stack(&stack_a);
+	ft_free_stack(&stack_b);
 }
 
 /* tiene que ser **stack para que guardemos la direccion de memoria del
@@ -97,6 +93,7 @@ int	main(int argc, char **argv)
 	{
 		if (flag == 1)
 			ft_free_double_pointer(splited);
+		ft_printf("¡¡¡error!!!\n");
 		return (0);
 	}
 	ft_push_swap(splited);

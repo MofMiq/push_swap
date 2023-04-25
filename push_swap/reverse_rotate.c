@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 10:12:59 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/24 18:18:07 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/25 09:54:59 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_rrb(t_stack **stack_b)
 
 void	ft_rrr(t_stack **stack_a, t_stack **stack_b)
 {
-	ft_rra(stack_a);
-	ft_rrb(stack_b);
+	ft_reverse_rotate(stack_a);
+	ft_reverse_rotate(stack_b);
 	ft_printf("rrr\n");
 }
