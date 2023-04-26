@@ -6,32 +6,38 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 12:55:24 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/24 10:44:47 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/26 15:48:49 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_digit(char c)
+/*Check that the character is a number.*/
+
+int	ft_is_digit(char c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }
 
-int	is_sign(char c)
+/*Check that the character is a sign.*/
+
+int	ft_is_sign(char c)
 {
 	if (c == '+' || c == '-')
 		return (1);
 	return (0);
 }
 
-/*como en strcmp si los strings son iguales devuelve 0 y si son distintos, 1;
-en cmp_number por seguir esa logica, invierto el true/false de toda la vida:
-si 0 es que sí son inguales los string; si devuelve 1, en algun punto son
-diferentes*/
+/*This function compares the numbers passed by parameter to see if there are
+non-literal duplicates such as +0 and -0 or 0001 and 1. The ft_strcmp function
+compares two strings and returns 0 if they are equal, 1 if they are different.
+Therefore, to follow that logic, this function returns 0 if it is true that the
+numbers are equal and 1 when they are different, inverting the usual
+true/false logic.*/
 
-int	cmp_number(char *s1, char *s2)
+int	ft_cmp_number(char *s1, char *s2)
 {
 	if (*s1 == '+' && *s2 != '+')
 			s1++;
@@ -46,9 +52,8 @@ int	cmp_number(char *s1, char *s2)
 	return (1);
 }
 
-/*check is the stack is already sorted when it's filled for the first time.
-0 is false-> isn't sorted; 1 is true-> is already sorted so whe don't have to
-make any operation.*/
+/*Check if the stack is already sorted. Returns 0 if is false, isn't sorted;
+1 if is true; is already sorted so we don't have to make any operation.*/
 
 int	ft_is_sorted(t_stack	*stack)
 {
@@ -64,8 +69,7 @@ int	ft_is_sorted(t_stack	*stack)
 	return (1);
 }
 
-/*while (stack) //no puede ser stack->next porque tiene que entrar en el bucle 
-cuando llega al ultimo nodo para comprobar si es el mayor*/
+/*Return the highest index within a stack.*/
 
 int	ft_highest_index(t_stack	*stack)
 {

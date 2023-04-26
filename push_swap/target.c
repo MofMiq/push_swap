@@ -6,14 +6,14 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 13:09:07 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/24 16:02:09 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/26 15:40:57 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*Assigns a position to each element of a stack from top to bottom in ascending
-order. start at 0.*/
+order. Start at 0.*/
 
 void	ft_position(t_stack **stack)
 {
@@ -30,20 +30,19 @@ void	ft_position(t_stack **stack)
 	}
 }
 
-/*i_b: al indice del primer nodo de b (el actual), no cambia al lo largo de
-la funcion.
-i_a: se refiere al indice dentro del stack a ("en el array"), para ir
-comparando con de a (un contador de toda la vida)
-t_p: empieza en 0 y el entero que va guardar y actualizar la target position
-en stack_b inicializamos tp en INT_MAX para ir colocando la target_position
-en b pero en relaciona a los valores y posiciones en a. -> lo que haremos en
-codigo es comparar el indice en a con el indice de b y comprobar si es 
-mayor, ademas comprobamos que el indice de a sea menor que la target
-position y vamos guardando las posiciones.
-el segundo bucle es para: 
-en el caso de que estemos ante el numero mayor de todas las pilas y por
-tanto tenga que ir en la ultima posicion en a, le dejamos el valor max.
-*/
+/*Picks the best target position in stack A for the given index of an element
+in stack B.
+i_b: refers to the index of the first node in b (the current one), which does not
+change throughout the function.
+i_a: is used to store and update the previous index of an element in a with a
+higher value, in order to determine it's target position.
+tp: starts at 0 and is the integer that will store and update the target position
+in stack_b.
+In the code, we compare the index_a with the index_b and check if it's greater.
+
+The second loop is for the case where we are dealing with the largest number in
+all the stacks and, therefore, it needs to go in the last position in a. In this
+case, we set the value to the maximum.*/
 
 int	ft_find_out_tp(t_stack **stack_a, int i_b, int i_a, int tp)
 {
@@ -60,10 +59,7 @@ int	ft_find_out_tp(t_stack **stack_a, int i_b, int i_a, int tp)
 		tmp = tmp->next;
 	}
 	if (i_a != INT_MAX)
-	{
-		//ft_printf("tp: %d", tp);
 		return (tp);
-	}
 	tmp = *stack_a;
 	while (tmp)
 	{
@@ -77,10 +73,10 @@ int	ft_find_out_tp(t_stack **stack_a, int i_b, int i_a, int tp)
 	return (tp);
 }
 
-/*this funcion fill pos (posiotion into the array) and target_pos from
-the estrcuture's list. the imporant it's withing ft_find_out_tp and it's
-to know where do we have to move the elemnets in stack_b to stack_a based
-on the cost in order to be sorted correctly.*/
+/*This funcion fill pos and target_pos from the estrcuture's list. The imporant
+thing it's withing ft_find_out_tp and it's to know where do we have to move the
+elemnets in stack_b to stack_a based on the cost in order to be sorted correctly.
+So, this function is basically to make a loop for the ft_find_out_tp function*/
 
 void	ft_write_target_position(t_stack **stack_a, t_stack **stack_b)
 {

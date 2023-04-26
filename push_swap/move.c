@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 10:04:51 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/24 18:18:07 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/26 12:46:35 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,15 +84,15 @@ void	ft_do_rotate_b(t_stack **stack_b, int *cost_b)
 	}
 }
 
-/*Chooses which move we have to do to get both stacks in the correct position.
-If both costs are positive, we do rotate in both stacks to save moves until one 
-of them reach 0. Otherwise, if both cost are negative we instead must do
-reverse_rotate in both stack as we have done previuously. When one of the cost 
-become 0 means that in one stack we don't have to make more moves so we exit the
-loop and make the aproppiate moves (rotate or reverse) in the other stack.
-As a remainder, we must change the postion of both stack to put the desired
-element at top of stack b and stack_a in the correct postion having as reference
-the target postion.*/
+/*We choose which move to make in orderto get both stacks in the correct
+position. If both costs are positive, we rotate both stacks to save moves until
+one of them reaches 0. Otherwise, if both cost are negative, we must do reverse
+rotate in both stack as we have done previously. When one of the cost becomes 0
+means that we don't have to make more moves in one stack, so we exit the loop
+and make the aproppiate moves (rotate or reverse) in the other stack. As a
+remainder, we must change the postion of both stack to put the desired element
+at top of stack b and stack_a in the correct postion having as reference the
+target postion.*/
 
 void	ft_choose_move(t_stack **a, t_stack **b, int cost_a, int cost_b)
 {

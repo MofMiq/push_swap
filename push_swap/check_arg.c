@@ -6,37 +6,30 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 12:35:42 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/14 12:57:54 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/26 15:49:13 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*Check is the arguments is a number.
-cheackeamos caracter a caracter -> char *argv*/
+/*Check if character by character if the arguments are numbers.*/
 
-int	is_number(char *argv)
+int	ft_is_number(char *argv)
 {
 	int	i;
 
 	i = 0;
-	if (is_sign(argv[i]) && argv[i + 1] != '\0')
+	if (ft_is_sign(argv[i]) && argv[i + 1] != '\0')
 		i++;
-	while (argv[i] && is_digit(argv[i]))
+	while (argv[i] && ft_is_digit(argv[i]))
 		i++;
-	if (argv[i] && !is_digit(argv[i]))
+	if (argv[i] && !ft_is_digit(argv[i]))
 		return (0);
 	return (1);
 }
 
-/* chaeks if there're duplicate numbers
-cmp_number = 0 ->los argumentos son iguales
-cmp_number = 1 ->los argumentos son distintos
-return: 1 si existe duplica; 0 si no hay ninguno
-int flag: boolean to know if the arguments had been parsed or not,
-because where to begin to check the arguments depends on that
-0 for when we use split; 1 for when not so we pass the program name
-*/
+/*Check if there're duplicate numbers.
+return values: 1 if there's a duplicate; 0 if there's none.*/
 
 int	ft_ndup(char **argv)
 {
@@ -53,7 +46,7 @@ int	ft_ndup(char **argv)
 			z++;
 		while (argv[j])
 		{
-			if ((j != i && cmp_number(argv[i], argv[j]) == 0) || (z > 1))
+			if ((j != i && ft_cmp_number(argv[i], argv[j]) == 0) || (z > 1))
 				return (1);
 			j++;
 		}
@@ -62,10 +55,8 @@ int	ft_ndup(char **argv)
 	return (0);
 }
 
-/*check if the arguments are correctly "written"
-int flag: boolean to know if the arguments had been parsed or not,
-because where to begin to check the arguments depends on that
-0 for when we use split; 1 for when not so we pass the program name*/
+/*Check that the arguments are correctly have been passed correctly acording
+to the scpecified format.*/
 
 int	ft_arg_check(char **argv)
 {
@@ -77,7 +68,7 @@ int	ft_arg_check(char **argv)
 	{
 		if (ft_strcmp("", argv[i]) == 0)
 			return (0);
-		if (!is_number(argv[i]))
+		if (!ft_is_number(argv[i]))
 			return (0);
 		nb = ft_atol(argv[i]);
 		if (nb < INT_MIN || nb > INT_MAX)

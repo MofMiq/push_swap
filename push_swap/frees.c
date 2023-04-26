@@ -6,13 +6,13 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 11:14:50 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/24 10:27:36 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/26 12:30:18 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*free char ** created with ft_split*/
+/*Free the double pointer allocated with ft_split*/
 
 void	ft_free_double_pointer(char **argv)
 {
@@ -29,7 +29,7 @@ void	ft_free_double_pointer(char **argv)
 	free(argv);
 }
 
-/*free the stacks*/
+/*Frees an stack created as a linked list*/
 
 void	ft_free_stack(t_stack **stack)
 {

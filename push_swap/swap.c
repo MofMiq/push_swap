@@ -6,15 +6,13 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 13:58:53 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/14 13:26:13 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/26 13:07:50 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*swap value and index of the two second nodes of the list*/
-//ft_swap(stack->index);
-//ft_swap(stack->value);
+/*Swap value and indices of the first two elements of the list.*/
 
 void	ft_swap_ps(t_stack *stack)
 {
@@ -30,17 +28,23 @@ void	ft_swap_ps(t_stack *stack)
 	stack->next->value = tmp;
 }
 
+/*Does swap in stack_a*/
+
 void	ft_sa(t_stack *stack_a)
 {
 	ft_swap_ps(stack_a);
 	ft_printf("sa\n");
 }
 
+/*Does swap in stack_b*/
+
 void	ft_sb(t_stack *stack_b)
 {
 	ft_swap_ps(stack_b);
 	ft_printf("sb\n");
 }
+
+/*Does swap in stack_b*/
 
 void	ft_ss(t_stack *stack_a, t_stack *stack_b)
 {

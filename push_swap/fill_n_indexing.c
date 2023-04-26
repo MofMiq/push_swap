@@ -6,13 +6,13 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 12:19:01 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/20 11:20:56 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/26 12:23:27 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*fill stacks a with the arguments changed previously to numbers.*/
+/*Fill stack_a with the previosuly converted numeric values of the arguments.*/
 
 t_stack	*ft_fill_stack(char **argv)
 {
@@ -32,11 +32,11 @@ t_stack	*ft_fill_stack(char **argv)
 	return (stack_a);
 }
 
-/*asignamos de mayor a menor porque tenemos el indice mayor al tener el tamaño
-de laa lista. puntero auxiliar con el que recorrer el stack; puntero largest
-para ir guardando la valor mayor con cada vuelta; int v: para ir guardando el
-valor mas alto de cada vuelta. al indexar empezamos en 1, porque 0 significa
-que no ha sido indexado todavia.*/
+/*This function adds an index to the strcuture which represents the positions
+in the stack of an element if the stack was already sorted in ascending order.
+We assign from highest to lowest because we have the highest index already
+since we ha the stack_size.
+We start indexing at 1.*/
 
 void	ft_index_stack(t_stack *stack_a, int stack_size)
 {

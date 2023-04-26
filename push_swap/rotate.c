@@ -6,14 +6,14 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 16:56:18 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/25 13:39:12 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/26 13:05:38 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*the first node of the list becomes the last one, because shifts all elements
-of it gp up by 1 */
+/*The first node of the list becomes the last one, because shifts all elements
+of it up by 1 */
 
 void	ft_rotate(t_stack	**stack)
 {
@@ -27,17 +27,23 @@ void	ft_rotate(t_stack	**stack)
 	last->next = tmp;
 }
 
+/*Does rotate in stack_a*/
+
 void	ft_ra(t_stack **stack_a)
 {
 	ft_rotate(stack_a);
 	ft_printf("ra\n");
 }
 
+/*Does rotate in stack_b*/
+
 void	ft_rb(t_stack **stack_b)
 {
 	ft_rotate(stack_b);
 	ft_printf("rb\n");
 }
+
+/*Does rotate in both stacks*/
 
 void	ft_rr(t_stack **stack_a, t_stack **stack_b)
 {

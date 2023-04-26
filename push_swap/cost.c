@@ -6,23 +6,16 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 12:21:02 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/24 18:53:17 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/26 12:14:57 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*size_b / 2 para dividir el stack en 2 mitades porque para la top vamos a hacer
-rb y para la bottom vamos a hacer rrb. 
-??? que pasa cuando el stack_b es impar ???
-el coste de rr lo vamos a hacer negativo
-para que cuando tengamos que hacer los movimientos solo con mirar el signo 
-sepamos del tiron que rotate tenemos que hacer.
-si tatno cost_a como cost_b tienen el mismo signo podemos ahorrar movs al mover
-los dos stacks al mismo tiempo
-como explicar operaciones ??*/
-
-/*¡¡¡¡¡¡¡¡¡REPASO AL ESTAS OPERACIONES!!!!!*/
+/*we divide both stack in 2 halves because we're going to do rotate for the top
+half and reverse rotate for the bottom. Futhermore, we will make the cost of 
+reverse rotate negative so that when we have to make the movements, we know
+immediately which rotate to make just by looking at the sign.*/
 
 void	ft_calculate_cost(t_stack **stack_a, t_stack **stack_b)
 {
@@ -45,14 +38,12 @@ void	ft_calculate_cost(t_stack **stack_a, t_stack **stack_b)
 			tmp_b->cost_a = (size_a - tmp_b->target_pos) * -1;
 		tmp_b = tmp_b->next;
 	}
-//	ft_print_list(*stack_b);
-//	pause();
 }
 
-/*find the element in stack_b with the cheapest cost to move to stack_a
-and we call other function to make the correct moves in both stack to 
-positionate both in the right postion. If there're various costs with
-the same value, we take the firt one we find.*/
+/*Find the element in stack_b with the cheapest cost to move to stack_a and
+then call anoother function to make the correct moves in both stacks to 
+position them in the right postion. If there're various costs with the same
+value, we take the first one we find.*/
 
 void	ft_cheapest_cost(t_stack **stack_a, t_stack **stack_b)
 {
@@ -73,6 +64,5 @@ void	ft_cheapest_cost(t_stack **stack_a, t_stack **stack_b)
 		}
 		tmp = tmp->next;
 	}
-	//ft_printf("cheapest: %d\n", cheapest);
 	ft_choose_move(stack_a, stack_b, cost_a, cost_b);
 }

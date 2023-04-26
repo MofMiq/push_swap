@@ -6,15 +6,15 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 13:39:17 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/24 14:01:01 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/26 15:27:15 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*function based on ft_list_new from libft, but changed to fit our structure
-in push_swap and where we inizialitate it. -1 is for structure's variables that
-we are not using for the moment and to clearly see it*/
+/*Function based on ft_list_new from libft, but has been modified to fit the
+structure of push_swap and where we inizialitate it. The "-1" is used for 
+structure variables that we aren't currently using, to make it clearer.*/
 
 t_stack	*ft_new_stack(int value)
 {
@@ -33,8 +33,7 @@ t_stack	*ft_new_stack(int value)
 	return (stack);
 }
 
-/*return the last element of the stack
-while (stack->next->next != NULL) //stack && stack->next && */
+/*Return the last element of the stack.*/
 
 t_stack	*ft_get_last_node(t_stack *stack)
 {
@@ -43,7 +42,7 @@ t_stack	*ft_get_last_node(t_stack *stack)
 	return (stack);
 }
 
-/*return the penultimate of the stack*/
+/*Return the penultimate of the stack.*/
 
 t_stack	*ft_get_penultimate_node(t_stack *stack)
 {
@@ -52,7 +51,7 @@ t_stack	*ft_get_penultimate_node(t_stack *stack)
 	return (stack);
 }
 
-/*returns the size of the list, (without the NULL, because isn't a node)*/
+/*Returns the size of the list, (without the NULL, because isn't a node)*/
 
 int	ft_stack_size(t_stack *stack)
 {
@@ -69,11 +68,11 @@ int	ft_stack_size(t_stack *stack)
 	return (size);
 }
 
-/*function based on ft_lstadd_back from libft, but changed to fit our structure
-in push_swap and add a 'new' node at the end of the stack.
+/*Function based on ft_list_new from libft, but has been modified to fit the
+structure of push_swap and add a 'new' node at the end of the stack.
 	last = ft_get_last_node(*stack);
 	last->next = new;
-	[new]->[new2]->NULL =>[new]->[last]->[new3]->NULL
+	[new]->[new2]->NULL =>[new]->[new2]->[last]->NULL
 	*/
 
 t_stack	*ft_stack_add_last(t_stack **stack, t_stack *new)
