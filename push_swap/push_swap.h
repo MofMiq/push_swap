@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:58:48 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/24 14:01:01 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/27 15:31:23 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,22 +34,22 @@ typedef struct s_stack
 # define END "\033[0m"
 
 //utils
-int		is_digit(char c);
-int		is_sign(char c);
-int		cmp_number(char *s1, char *s2);
+int		ft_is_digit(char c);
+int		ft_is_sign(char c);
+int		ft_cmp_number(char *s1, char *s2);
 int		ft_is_sorted(t_stack	*stack);
 int		ft_highest_index(t_stack	*stack);
 
 //check arguments
-int		is_number(char *argv);
+int		ft_is_number(char *argv);
 int		ft_ndup(char **argv);
 int		ft_arg_check(char **argv);
 
-//main
+//push_swap
 void	ft_leaks(void);
 void	ft_print_list(t_stack *stack_a);
-void	ft_push_swap(char **argv);
 void	ft_decide(t_stack	**stack_a, t_stack **stack_b, int stack_size);
+void	ft_push_swap(char **argv);
 
 //parse
 char	**ft_parse(char **argv);
@@ -70,7 +70,7 @@ t_stack	*ft_stack_add_last(t_stack **stack, t_stack *new);
 int		ft_stack_size(t_stack *stack);
 t_stack	*ft_get_penultimate_node(t_stack *stack);
 
-//sort ->reorganizar
+//sort
 void	ft_sort_3(t_stack	**stack_a);
 void	ft_sort_plus(t_stack **stack_a, t_stack **stack_b);
 void	ft_push_until_3(t_stack **stack_a, t_stack **stack_b);
@@ -115,5 +115,11 @@ void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
 void	ft_push(t_stack **src, t_stack **dst);
 void	ft_pa(t_stack	**stack_a, t_stack **stack_b);
 void	ft_pb(t_stack	**stack_a, t_stack **stack_b);
+
+//checker
+void	ft_check_op(t_stack **stack_a, t_stack **stack_b, char *str);
+void	ft_check_op_2(t_stack **stack_a, t_stack **stack_b, char *str);
+void	ft_error_checker(t_stack **stack_a, t_stack **stack_b);
+void	ft_checker(char **argv);
 
 #endif
