@@ -6,11 +6,16 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 16:38:03 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/27 15:37:01 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/04/27 18:38:29 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+/*void	ft_leaks(void)
+{
+	system("leaks -q checker");
+}*/
 
 void	ft_check_op(t_stack **stack_a, t_stack **stack_b, char *str)
 {
@@ -78,6 +83,8 @@ void	ft_checker(char **argv)
 	ft_free_stack(&stack_a);
 	ft_free_stack(&stack_b);
 }
+
+//atexit(ft_leaks);
 
 int	main(int argc, char **argv)
 {
