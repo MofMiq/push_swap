@@ -2,6 +2,8 @@
 
 This project will require you to sort data in a stack using a limited set of instructions and using the minimum number of instructions possible. To succeed, you will need to experiment with various algorithms and choose the most appropriate one for optimal sorting.
 
+![](https://github.com/MofMiq/push_swap/blob/main/arg%20copy.gif)
+
 ## Instructions
 
 - `sa` : swap a - swap the first 2 elements at the top of stack a. Do nothing if there is only one or no elements).
@@ -75,3 +77,7 @@ typedef struct s_stack
   - Choosing the cheapest cost
   - Executing the chosen sequence of actions. If both costs are positive, we rotate both stacks to save moves until one of them reaches 0. Otherwise, if both cost are negative, we must do reverse rotate in both stack as we have done previously. When one of the cost becomes 0 means that we don't have to make more moves in one stack, so we make the aproppiate moves (rotate or reverse) in the other stack.
   - Shift the already sorted stack_a but getting it in the rigth position.
+
+## BONUS
+
+For the bonus you have to check if the stack is sorted using the given instructions, so we use our function `get_next_line` to read from the 0 (standard input), for each line entered, we compare it with our known instructions, if the input doesn't match with any of them, we must display `Error` in the standard error, otherwise we execute the proper instruction on our stack. If the list is sorted with the inputs given, we print OK; otherwise, we print KO.
