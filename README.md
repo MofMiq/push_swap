@@ -81,4 +81,3 @@ typedef struct s_stack
 ## BONUS
 
 For the bonus you have to check if the stack is sorted using the given instructions, so we use our function `get_next_line` to read from the 0 (standard input), for each line entered, we compare it with our known instructions, if the input doesn't match with any of them, we must display `Error` in the standard error, otherwise we execute the proper instruction on our stack. If the list is sorted with the inputs given, we print OK; otherwise, we print KO.
-
