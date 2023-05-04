@@ -6,7 +6,7 @@
 #    By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/22 13:21:44 by marirodr          #+#    #+#              #
-#    Updated: 2023/04/27 15:47:29 by marirodr         ###   ########.fr        #
+#    Updated: 2023/05/04 11:04:56 by marirodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,12 +68,12 @@ re:				fclean all
 py3:	re
 		python3 python_visualizer.py `ruby -e "puts (1..3).to_a.shuffle.join(' ')"`
 py5:	re
-		python3 python_visualizer.py `ruby -e "puts (1..6).to_a.shuffle.join(' ')"`
+		python3 python_visualizer.py `ruby -e "puts (1..5).to_a.shuffle.join(' ')"`
 py10:	re
-		python3 python_visualizer.py `ruby -e "puts (-20..10).to_a.shuffle.join(' ')"`
+		python3 python_visualizer.py `ruby -e "puts (1..10).to_a.shuffle.join(' ')"`
 py100:	re
 		python3 python_visualizer.py `ruby -e "puts (1..100).to_a.shuffle.join(' ')"`
 py500:	re
 		python3 python_visualizer.py `ruby -e "puts (1..500).to_a.shuffle.join(' ')"`
 
-.PHONY: all, clean, fclean, re, py3, py5, , py10, py100, py500, bonus
+.PHONY: all, clean, fclean, re, py3, py5, py10, py100, py500, bonus

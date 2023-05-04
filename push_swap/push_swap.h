@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:58:48 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/27 15:31:23 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/05/04 11:05:54 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,15 @@
 
 # include "libft/libft.h"
 # include <limits.h>
+
+/*
+value: the number itself.
+index: it's index in the list of all values that must be sorted.
+pos: the position of the number in the stack.
+target_pos: the position the number should be in the stack A.
+cost_a: the cost of moving the number to its right position in stack A.
+cost_b: the cost of moving the number to the top of stack B.
+next: the pointer to the next element in the stack.*/
 
 typedef struct s_stack
 {

@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 16:33:31 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/26 12:50:06 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/05/04 11:05:18 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	**ft_parse(char **argv)
 
 	if (ft_strcmp("", argv[1]) == 0)
 	{
-		ft_printf("¡¡¡error!!!\n");
+		ft_printf("KO\n");
 		exit(1);
 	}
 	str = ft_split(argv[1], ' ');

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 11:26:03 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/26 15:40:26 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/05/04 11:05:21 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_print_list(t_stack *stack_a)
 /*With this function, we simply route the program to one or another function
 depending on the number of elements.*/
 
-void	ft_decide(t_stack	**stack_a, t_stack **stack_b, int stack_size)
+void	 ft_decide(t_stack	**stack_a, t_stack **stack_b, int stack_size)
 {
 	if (stack_size == 2)
 		ft_sa(*stack_a);
@@ -93,7 +93,7 @@ int	main(int argc, char **argv)
 	{
 		if (flag == 1)
 			ft_free_double_pointer(splited);
-		ft_printf("¡¡¡error!!!\n");
+		ft_printf("¡error!\n");
 		return (0);
 	}
 	ft_push_swap(splited);

@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 10:04:51 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/26 12:46:35 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/05/04 11:05:16 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	ft_do_rotate_b(t_stack **stack_b, int *cost_b)
 	}
 }
 
-/*We choose which move to make in orderto get both stacks in the correct
+/*We choose which move to make in order to get both stacks in the correct
 position. If both costs are positive, we rotate both stacks to save moves until
 one of them reaches 0. Otherwise, if both cost are negative, we must do reverse
 rotate in both stack as we have done previously. When one of the cost becomes 0

@@ -6,13 +6,13 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 13:24:44 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/26 13:56:14 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/05/04 11:05:36 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*We sort three elements separately because there are only six possible cases,
+/*We sort three elements separately because there are only five possible cases,
 excluding the one case where the numbers are already sorted, and this way, we
 ensure that it's sorted in two moves or fewer.*/
 

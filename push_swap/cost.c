@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 12:21:02 by marirodr          #+#    #+#             */
-/*   Updated: 2023/04/26 12:14:57 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/05/04 11:04:49 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_calculate_cost(t_stack **stack_a, t_stack **stack_b)
 }
 
 /*Find the element in stack_b with the cheapest cost to move to stack_a and
-then call anoother function to make the correct moves in both stacks to 
+then call another function to make the correct moves in both stacks to 
 position them in the right postion. If there're various costs with the same
 value, we take the first one we find.*/
 
