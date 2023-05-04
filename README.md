@@ -39,6 +39,8 @@ The grade is on a scale from 0 to 100 (validating the project requires at least 
   - 1 point for less than 11500 instructions.
   - 0 point for more than 11500 instructions.
 
+![](https://github.com/MofMiq/push_swap/blob/main/visualizer.gif)
+
 ## Structure
 
 ```c
