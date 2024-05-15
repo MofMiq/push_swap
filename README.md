@@ -1,4 +1,5 @@
 # Push_swap
+> This repository contains a "Push_swap" project that is part of the École 42 curriculum.
 
 This project will require you to sort data in a stack using a limited set of instructions and using the minimum number of instructions possible. To succeed, you will need to experiment with various algorithms and choose the most appropriate one for optimal sorting.
 
